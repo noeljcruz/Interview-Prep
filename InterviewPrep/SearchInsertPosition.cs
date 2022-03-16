@@ -36,32 +36,52 @@ namespace InterviewPrep
 			{
 				return Array.IndexOf(nums, target);
 			}
-			return -1;
+			else if (target < nums[0])
+			{
+				return 0;
+			}
+			else if (target > nums[nums.Length - 1])
+			{
+				return nums.Length;
+			}
+			else
+			{
+				return BinarySearch(nums, target);
+			}
 		}
 
-		// BINARY SEARCH EXAMPLE
-		public static object BinarySearchDisplay(int[] arr, int key)
+		private static int BinarySearch(int[] arr, int key)
 		{
-			int minNum = 0;
-			int maxNum = arr.Length - 1;
+			int min = 0;
+			int max = arr.Length - 1;
+			int targetIndex = 1;
 
-			while (minNum <= maxNum)
+			while (max - min > 1)
 			{
-				int mid = (minNum + maxNum) / 2;
-				if (key == arr[mid])
+				if (key == arr[min] + 1)
 				{
-					return ++mid;
+					return min + 1;
 				}
-				else if (key < arr[mid])
+
+				if (key == arr[max] - 1)
 				{
-					maxNum = mid - 1;
+					return max;
+				}
+
+				int mid = min + (max - min) / 2;
+
+				if (key < arr[mid])
+				{
+					max = mid;
+					targetIndex = max;
 				}
 				else
 				{
-					minNum = mid + 1;
+					min = mid;
+					targetIndex = min + 1;
 				}
 			}
-			return "None";
+			return targetIndex;
 		}
 	}
 }
