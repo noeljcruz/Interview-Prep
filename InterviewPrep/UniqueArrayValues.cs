@@ -9,7 +9,6 @@ namespace InterviewPrep
 {
 	internal class UniqueArrayValues
 	{
-
 		// --- QUESTION ---
 
 		//Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
@@ -52,13 +51,6 @@ namespace InterviewPrep
 					ht.Add(i, 1);
 				}
 			}
-
-			// ht looks like this:
-			// {
-			// 2 : 2, 
-			// 3 : 1,
-			// 4 : 1
-			// }
 
 			bool thereAreDuplicates = false;
 
