@@ -19,9 +19,13 @@ namespace InterviewPrep
 			//int[] inputArr = { 3, 3 };
 			//Console.WriteLine(String.Join(",", TwoSumSolution.TwoSum(inputArr, 6)));
 
-			int[] nums = { 1, 3, 5, 6 };
-			int target = 5;
-			Console.WriteLine(SearchInsertPosition.SearchInsert(nums, target));
+			// int[] nums = { 1, 3, 5, 6 };
+			// int target = 5;
+			// Console.WriteLine(SearchInsertPosition.SearchInsert(nums, target));
+
+			string haystack = "hello";
+			string needle = "ll";
+			Console.WriteLine(strStr.StrStr(haystack, needle));
 
 			Console.ReadKey();
 		}
