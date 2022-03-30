@@ -10,22 +10,22 @@ namespace InterviewPrep
 		// Main Method
 		static void Main(string[] args)
 		{
-			//string input = "race car";
-			//Palendrome.CheckIfPalendrome(input.Replace(" ", ""));
+			myStack<int> stack = new myStack<int>();
 
-			//int[] testArr = new int[] { 1, 2, 2, 3 };
-			//UniqueArrayValues.ArrHasDuplicates(testArr);
+			stack.Push(1);
+			stack.Push(2);
+			stack.Push(3);
 
-			//int[] inputArr = { 3, 3 };
-			//Console.WriteLine(String.Join(",", TwoSumSolution.TwoSum(inputArr, 6)));
+			Console.WriteLine(stack.Count());
 
-			// int[] nums = { 1, 3, 5, 6 };
-			// int target = 5;
-			// Console.WriteLine(SearchInsertPosition.SearchInsert(nums, target));
+			var secondStack = stack.Clone();
+			
+			foreach(var item in secondStack)
+			{
+				Console.WriteLine(secondStack[item]);
+			}
 
-			string haystack = "hello";
-			string needle = "ll";
-			Console.WriteLine(strStr.StrStr(haystack, needle));
+			Console.WriteLine(secondStack);
 
 			Console.ReadKey();
 		}
